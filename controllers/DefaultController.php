@@ -1,6 +1,6 @@
 <?php
 
-namespace chemezov\yii2\rest_api_doc\controllers;
+namespace djarmander\yii2\rest_api_doc\controllers;
 
 use Yii;
 use yii\helpers\BaseInflector;
@@ -13,7 +13,7 @@ class DefaultController extends \yii\base\Controller
     public function init()
     {
         $view = $this->getView();
-        \chemezov\yii2\rest_api_doc\ModuleAsset::register($view);
+        \djarmander\yii2\rest_api_doc\ModuleAsset::register($view);
         parent::init();
     }
 

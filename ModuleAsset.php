@@ -1,6 +1,6 @@
 <?php
 
-namespace chemezov\yii2\rest_api_doc;
+namespace djarmander\yii2\rest_api_doc;
 
 class ModuleAsset extends \yii\web\AssetBundle
 {
