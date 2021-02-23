@@ -39,11 +39,11 @@
             $bodyField.val(prettify($(this).text()));
         });
 
-        $('#token, #base_url').each(function () {
+        $('#login,  #base_url').each(function () {
             $(this).val(localStorage.getItem('rest_api_doc_' + $(this).attr('id')));
         });
 
-        $('#token, #base_url').change(function () {
+        $('#login, #base_url').change(function () {
             localStorage.setItem('rest_api_doc_' + $(this).attr('id'), $(this).val());
         });
 
@@ -107,7 +107,7 @@
                 contentType: 'application/json',
                 dataType: 'json',
                 headers: {
-                    Authorization: 'Bearer ' + $('#token').val()
+                    Authorization: 'Basic ' + btoa($('#login').val() + ":" + $("#password").val()),
                 }
             }, formData);
 

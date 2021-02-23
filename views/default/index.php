@@ -26,7 +26,10 @@ $methodColorMap = [
         </div>
         <div class="col-lg-4 pull-right">
             <div class="form-group">
-                <input class="form-control " type="text" id="token" placeholder="Authentication Token" />
+                <input class="form-control " type="text" id="login" placeholder="Login" />
+            </div>
+            <div class="form-group">
+                <input class="form-control " type="password" id="password" placeholder="Password" />
             </div>
         </div>
     </div>
