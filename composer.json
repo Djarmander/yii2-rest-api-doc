@@ -1,5 +1,5 @@
 {
-    "name": "chemezov/yii2-rest-api-doc",
+    "name": "djarmander/yii2-rest-api-doc",
     "type": "yii2-extension",
     "description": "Simple documentation generator for Yii2 REST applications based on defined API endpoints and actions annotations.",
     "keywords": ["yii2", "rest", "api", "generator", "documentation"],
@@ -12,6 +12,10 @@
         {
             "name": "Mikhail Chemezov",
             "email": "michlenanosoft@gmail.com"
+        },
+        {
+            "name": "Andriy Naumenko",
+            "email": "andriy@naumenko.pro"
         }
     ],
     "require": {
@@ -20,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "chemezov\\yii2\\rest_api_doc\\": ""
+            "djarmander\\yii2\\rest_api_doc\\": ""
         }
     }
 }
