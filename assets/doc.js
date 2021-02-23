@@ -107,7 +107,7 @@
                 contentType: 'application/json',
                 dataType: 'json',
                 headers: {
-                    Authorization: 'Basic ' + btoa($('#login').val() + ":" + $("#password").val()),
+                    "Authorization": 'Basic ' + btoa($('#login').val() + ":" + $("#password").val()),
                 }
             }, formData);
 
