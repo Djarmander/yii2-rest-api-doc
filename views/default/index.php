@@ -19,17 +19,17 @@ $methodColorMap = [
 ?>
 <div class="docs-index">
     <div class="row">
+
         <div class="col-lg-4 pull-left">
             <div class="form-group">
-                <input class="form-control " type="text" id="base_url" placeholder="Base URL" />
-            </div>
-        </div>
-        <div class="col-lg-4 pull-right">
-            <div class="form-group">
+                <label for="login">Login</label>
                 <input class="form-control " type="text" id="login" placeholder="Login" />
             </div>
+        </div>
+        <div class="col-lg-4 pull-left">
             <div class="form-group">
-                <input class="form-control " type="password" id="password" placeholder="Password" />
+                <label for="password">Password</label>
+                <input class="form-control " type="text" id="password" placeholder="Password" />
             </div>
         </div>
     </div>
@@ -124,10 +124,10 @@ $methodColorMap = [
                                             <?php endif; ?>
                                             <?php if (!empty($rule['filters'])) : ?>
                                                 <fieldset class="filters">
-                                                    <legend>Query Filters</legend>
+                                                    <legend>Query Params</legend>
                                                     <?php foreach ($rule['filters'] as $filter) : ?>
                                                         <div class="form-group">
-                                                            <label><?= $filter['title'] ?></label>
+                                                            <label><?=$filter['type']?> <?= $filter['title'] ?> <?=($filter['required']) ? "<span style='color: red'>required</span>" : "" ?></label>
                                                             <input data-key="<?= $filter['key'] ?>" class="form-control" type="text" />
                                                         </div>
                                                     <?php endforeach; ?>

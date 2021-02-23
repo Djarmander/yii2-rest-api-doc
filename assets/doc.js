@@ -39,11 +39,11 @@
             $bodyField.val(prettify($(this).text()));
         });
 
-        $('#login,  #base_url').each(function () {
+        $('#login').each(function () {
             $(this).val(localStorage.getItem('rest_api_doc_' + $(this).attr('id')));
         });
 
-        $('#login, #base_url').change(function () {
+        $('#login').change(function () {
             localStorage.setItem('rest_api_doc_' + $(this).attr('id'), $(this).val());
         });
 
@@ -101,7 +101,7 @@
             }
 
             var ajaxParams = $.extend({
-                url: $('#base_url').val() + url,
+                url:  url,
                 method: method,
                 data: body,
                 contentType: 'application/json',

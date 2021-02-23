@@ -74,6 +74,7 @@ class DefaultController extends \yii\base\Controller
                 continue;
             }
 
+
             preg_match_all('/\{[^}]*\}/', $rule['url'], $matched);
 
             $params = [];
@@ -128,6 +129,7 @@ class DefaultController extends \yii\base\Controller
         return $rules;
     }
 
+
     function _fieldsFlip($fields, &$fileFields = [])
     {
         $flipped = [];
@@ -165,15 +167,25 @@ class DefaultController extends \yii\base\Controller
         if ($elementsString) {
             eval('$elements = ' . $elementsString . ';');
         }
+
+
         $finalElements = [];
         if (!empty($elements)) {
-            foreach ($elements as $element) {
+            foreach ($elements as $element=>$elVal) {
+                if(!is_array($elVal)) {
+                    $element = $elVal;
+                    $elVal['required'] = 0;
+                    $elVal['type'] = 'string';
+                }
                 $finalElements[] = [
                     'title' => ucfirst(str_replace('_', ' ', $element)),
                     'key' => $element,
+                    'required' => $elVal['required'],
+                    'type' => '(' . $elVal['type'] . ')',
                 ];
             }
         }
+
         return $finalElements;
     }
 }
